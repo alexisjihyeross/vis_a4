@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Vis & Society Assignment 3</title>
+	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+</head>
+
+<body>
+	<header>
+		<h1>
+			<small>Assignment 4</small>
+			Persuasive or Deceptive Visualization?
+		</h1>
+
+		<p>
+			<strong>Alexis Ross</strong> — <em>alexisro@mit.edu</em>
+		</p>
+	</header>
+
+	<main>
+    <h2>Proposition: States with more nearby abortion clinics have higher abortion rates.</h2>
+
+		<section>
+      <h3>FOR the Proposition</h3>
+
+      <figure>
+				<img src="vis1.png" width="100%" alt="" />
+				<figcaption>
+					This figure shows a tile grid map of the contiguous United States. Each state colored according to the rate of abortions in 2020 among women residing in that state (i.e. the number of abortions per 1000 women aged 15-44). Each state's size is proportional to the number of abortion clinics in that state in 2020. As shown, the states with the highest abortion rates (i.e. the darkest shades of red) also tend to be the states closest to many abortion clinics (i.e. the largest states), either because the states themselves have many clinics or because they are neighbors to states with many clinics. This visualization suggests that the number of abortion clinics in a state is positively correlated with the rate of abortions.
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Decisions and Rationale:
+			</p>
+
+			<ul>
+				<li><b>Color scale:</b> I chose to set minimum and maximum values for the color scale--5 and 25 respectively--so that the differences in abortion rates between states would be more apparent. This decision helps make my visualization persuasive by emphasizing the differences in abortion rates between states. With a wider range of colors, the differences in abortion rates would be less apparent, and the visualization would be less persuasive. I would give this choice a <b>score of 1.5</b>, i.e. leaning earnest, because the legend shows the truncation of the color scale.</li>
+				<li><b>Connecting lines:</b> I chose to include additional lines connecting states where one state has a high abortion rate and the other has many abortion clinics. This choice highlights state pairs that show the intended message of the visualization. I would give this choice a <b>score of -1</b>, i.e. leaning deceptive, because the lines are in fact between states with high abortion rates and many abortion clinics, but there are also other states that are near states with many abortion clinics that have low abortion rates--for example, Rhode Island (RI), Vermont (VT), New Hampshire (NH), and Ohio (OH)--and the lines distract from this fact.</li>
+				<li><b>Title:</b> I chose to give this visualization a title stating the intended message of the visualization. This choice makes the visualization more persuasive by allowing the viewer to focus on the relevant aspects of the visualization in interpreting it. I would give this choice a <b>score of -0.5</b>, i.e. leaning deceptive, since again it may distract the viewer from noticing exceptions to the intended message (such as the states mentioned in the previous point).</li>
+			<li><b>Visualization form:</b> I experimented with several forms of visualization before settling on the tile grid map, including a bubble plot and scatter plot. I chose the tile grid map because I found that the tile grid map made the intended message of the visualization more apparent. This is true for two reasons: 1) Proximity of states with high abortion rates and many abortion clinics is more apparent in the tile grid map due to the adjacency of the tiles. 2) Exceptions to the intended message are less apparent in the tile grid map because spatial location in the grid is not as easily compared as in the other forms. For example, in a scatter plot, an exception would be visually far from marks that follow the overall trend, and would stand out more as an outlier. I would give this choice a <b>score of -0.5</b>, i.e. leaning deceptive, because it makes the exceptions to the intended message less apparent.</li>
+			<li><b>Size encoding:</b>I chose to use size encoding to represent the number of abortion clinics in each state for two reasons. First, size is an effective way of encoding the number of abortion clinics in each state because it is easy to compare the sizes of the states. Second, larger tiles are also more likely to overlap with other states, and so it highlights visually that these states' clinics are nearby to other states (since they are physically overlapping in the visualization). I would give this choice a <b>score of 1</b>, i.e. leaning earnest, because using size is an intuitive and standard way to represent a magnitude of a variable.</li>
+			</ul>
+    </section>
+
+    <section>
+      <h3>AGAINST the Proposition</h3>
+
+      <figure>
+				<img src="vis2.png" width="100%" alt="" />
+				<figcaption>
+				This figure shows a bar plot of the rate of abortions in each state (i.e. the number of abortions per 1000 women aged 15-44) in 2020. The states are grouped by the number of nearby abortion clinics to that state. Also shown are the average abortion rates for each group of states.
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Decisions and Rationale:
+			</p>
+
+			<ul>
+				<li><b>Computing number of nearby abortion clinics:</b> I chose to compute the number of nearby abortion clinics for each state by counting the maximum number of abortion clinics in any state that shares a border with the state (including that state). Other methods of computing the number of nearby abortion clinics, such as using the mean number of abortion clinics in neighboring states, would have portrayed a stronger relationship between the number of abortion clinics and the abortion rate. I would give this choice a <b>score of -1.5</b>, i.e. leaning deceptive, because it makes the relationship between the number of abortion clinics and the abortion rate less apparent, but the maximum is still a reasonable enough way to compute the number of nearby abortion clinics.</li>
+				<li><b>Annotated line with means:</b> I chose to include a line for the mean abortion rate for each group of states. This choice makes the visualization more persuasive by highlighting the intended message of the visualization, i.e. that the line does not increase a lot across the groups. I also chose to place the text showing the meaning of the points on the line are on the second point, which has a decreased value than the first point: This brings the viewer's attention to the point on the line that is most relevant to the intended message. I would give this choice a <b>score of -1</b>, i.e. leaning deceptive, because while a best fit line is a standard way of showing trends in a plot, this line is fit on discrete groups of data, and so it is not a standard way to represent a continuous relationship.</li>
+				<li><b>Grouped bar chart:</b></li> I chose to use a grouped bar plot instead of something like a scatter plot since I found that the correlation was more obvious in the scatter plot. The groupings of the bars into discrete categories makes the trend less apparent than a scatter plot showing the continuous relationship between the number of abortion clinics and the abortion rate, since the groupings aggregate and mask the individual data points. I experimented with several bins and found that grouping the states into the three bins shown here made the correlation between the number of abortion clinics and the abortion rate least apparent, while still not making it too obvious that the bins are artificial. (In some mappings, the bins were more obviously artificial since the states were not evenly distributed among the bins.) Part of the reason this grouping is effective is that it collapses all the states with more than 40 abortion clinics into the last bin, even though some of these states have much higher numbers of clinics, and so the overall mean of the group is lowered by the presence of states with fewer clinics.
+				I would give this choice a <b>score of -2</b>, i.e. leaning deceptive, because it makes the relationship between the number of abortion clinics and the abortion rate less apparent, and the grouping into discrete bins is not a standard way to represent a continuous relationship.</li>
+				<li><b>Color:</b> I chose to have the word "not" in the title and line be the same color (red) so that the viewer would associate the two. This choice makes the visualization more persuasive by highlighting the intended message of the visualization, i.e. that the line does not increase a lot across the groups. I would give this choice a <b>score of 0.5</b>, i.e. leaning earnest, because the color does involve some manipulation of the viewer's perception--it just leverages the viewer's natural tendency to associate similar colors in order to facilitate the viewer's understanding of the visualization.</li>
+			</ul>
+    </section>
+
+    <section>
+      <h2>Final Reflection</h2>
+
+      <p>
+		Overall, I found it quite difficult to create visualizations that were persuasive for both sides of the argument, in particular because making the visualizations persuasive meant minimizing the appearance of outliers to the trends the visualizations were intended to show. However, there were a few strategies that I found effective in making my visualizations more persuasive. One strategy that I was surprised to find quite effective was to use additional annotations on top of visualizations to bring attention to selective parts of the visualization. For example, in the first visualization, I used connecting lines to highlight the states that supported the intended message of the visualization. I found that this strategy was particularly effective at getting the viewer to ignore outliers. I also found that the form of a visualization was a key design choice in creating persuasive visualizations, since certain types of visualizations, such as scatter plots, can make outliers much more visually apparent than other forms. 
+		<br><br>
+		I also found it surprising that there were some design choices that felt much less deceptive than others, even when my intention in making all of these choices was the same intention to persuade the viewer of a particular proposition. I think what distinguished "acceptable" persuasive choices from "misleading" ones was whether the choice was a standard/intuitive way of representing the data. For example, using size to represent the number of abortion clinics in each state was a standard way of representing a magnitude of a variable, and so it felt less deceptive than other choices. In contrast, grouping the states into discrete bins based on continuous values was not a standard way to represent a continuous relationship, and so it felt more deceptive. Another key distinguishing factor is whether the choice was intended to <i>hide</i> a part of the data, or whether it was intended to <i>highlight</i> a part of the data. For example, choices like choosing maximum values for axes, if made to highlight variation in the data, seem less "ethical" to me than choices like using color to highlight a particular part of the data. I think this also explains why the second visualization involved more deceptive design choices than the first visualization: I formulated the first after exploratory data analysis and so the proposition naturally "stood out" more in the data; this meant that I needed to then <i>hide</i> naturally visible trends in the data in order to make the second visualization persuasive.
+		Together, these insights suggest that ethical analysis and visualization involves thinking about the standard ways of representing data, and whether the design choices are intended to hide or highlight parts of the data.
+	  </p>
+    </section>
+	</main>
+</body>
+</html>
